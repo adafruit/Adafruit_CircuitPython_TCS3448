@@ -24,14 +24,12 @@ Table of Contents
 .. toctree::
     :caption: Tutorials
 
-.. todo:: Add any Learn guide links here. If there are none, then simply delete this todo and leave
-    the toctree above for use later.
+    Learn Guide <https://learn.adafruit.com/adafruit-tcs3448-14-channel-light-color-sensor-breakout>
 
 .. toctree::
     :caption: Related Products
 
-.. todo:: Add any product links here. If there are none, then simply delete this todo and leave
-    the toctree above for use later.
+    Adafruit TCS3448 14-Channel Light / Color Sensor Breakout - STEMMA QT / Qwiic <https://www.adafruit.com/product/6525>
 
 .. toctree::
     :caption: Other Links

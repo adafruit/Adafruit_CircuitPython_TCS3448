@@ -38,19 +38,10 @@ This is easily achieved by downloading
 or individual libraries can be installed using
 `circup <https://github.com/adafruit/circup>`_.
 
-
-
-.. todo:: Describe the Adafruit product this library works with. For PCBs, you can also add the
-image from the assets folder in the PCB's GitHub repo.
-
 `Purchase one from the Adafruit shop <http://www.adafruit.com/products/6525>`_
 
 Installing from PyPI
 =====================
-.. note:: This library is not available on PyPI yet. Install documentation is included
-   as a standard element. Stay tuned for PyPI availability!
-
-.. todo:: Remove the above note if PyPI version is/will be available at time of release.
 
 On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
 PyPI <https://pypi.org/project/adafruit-circuitpython-tcs3448/>`_.
@@ -101,8 +92,43 @@ Or the following command to update an existing version:
 Usage Example
 =============
 
-.. todo:: Add a quick, simple example. It and other examples should live in the
-examples folder and be included in docs/examples.rst.
+.. code-block:: python
+
+    import time
+    import board
+    from adafruit_tcs3448 import TCS3448
+
+    i2c = board.I2C()
+    sensor = TCS3448(i2c)
+
+    CHANNEL_LABELS = [
+        "FZ (450nm blue)",
+        "FY (560nm yellow-green)",
+        "FXL (596nm orange)",
+        "NIR (855nm near-IR)",
+        "VIS_TL_0 (clear top-left, cycle 1)",
+        "VIS_BR_0 (clear btm-right, cycle 1)",
+        "F2 (424nm violet-blue)",
+        "F3 (473nm blue-cyan)",
+        "F4 (516nm green)",
+        "F6 (636nm red)",
+        "VIS_TL_1 (clear top-left, cycle 2)",
+        "VIS_BR_1 (clear btm-right, cycle 2)",
+        "F1 (407nm violet)",
+        "F7 (687nm deep red)",
+        "F8 (748nm near-IR edge)",
+        "F5 (546nm green-yellow)",
+        "VIS_TL_2 (clear top-left, cycle 3)",
+        "VIS_BR_2 (clear btm-right, cycle 3)",
+    ]
+
+    while True:
+        readings = sensor.all_channels
+        print("--- TCS3448 Channel Readings ---")
+        for label, value in zip(CHANNEL_LABELS, readings):
+            print(f"  {label}: {value}")
+        print()
+        time.sleep(1)
 
 Documentation
 =============
