@@ -33,9 +33,8 @@ CHANNEL_LABELS = [
 
 while True:
     readings = sensor.all_channels
-    print(readings)
-    '''print("--- TCS3448 Channel Readings ---")
+    print("--- TCS3448 Channel Readings ---")
     for label, value in zip(CHANNEL_LABELS, readings):
         print(f"  {label}: {value}")
-    print()'''
+    print()
     time.sleep(1)
