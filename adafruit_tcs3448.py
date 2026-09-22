@@ -441,8 +441,7 @@ class TCS3448:  # noqa: PLR0904
         time.sleep(0.001)
         for _ in range(250):
             try:
-                with self.i2c_device as i2c:
-                    i2c.write(b"")
+                _ = self._reg_bank
                 break
             except OSError:
                 time.sleep(0.001)
